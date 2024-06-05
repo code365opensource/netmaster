@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: publish to powershell gallery
+      - name: rename psd1
         shell: pwsh
-        env:
-          nugetkey: ${{secrets.NUGETKEY}}
         run: |
-          Install-Module -Name PowerShellGet -Force -AllowClobber -Scope CurrentUser
           Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
-          Publish-PSResource -ApiKey $env:nugetkey -Path networktoolkit.psd1 -Repository PSGallery
+      - name: Publish PowerShell Module
+        uses: natescherer/publish-powershell-action@v1
+        with:
+          token: ${{ secrets.NUGETKEY }}
+          target: gallery
+          path: networktoolkit.psd1
