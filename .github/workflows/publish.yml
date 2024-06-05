@@ -20,7 +20,8 @@ jobs:
           Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
           Write-Host $env:key
       - name: Publish PowerShell Module
-        uses: chenxizhang/publish-powershell-module-action@v35
+        uses: natescherer/publish-powershell-action@v1.1.1
         with:
-          NuGetApiKey: ${{ secrets.NUGETKEY }}
-          modulePath: ./
+          token: ${{ secrets.NUGETKEY }}
+          path: ./networktoolkit.psd1
+          target: gallery
