@@ -9,7 +9,7 @@
     CompatiblePSEditions = @("Desktop", "Core")
 
     # ID used to uniquely identify this module, replace with new GUID if copying module
-    GUID                 = 'ab6e9237-63b0-4907-b59d-c57cc02c5c55'
+    GUID                 = '2bfef943-c4b0-48f1-bfe0-27557b3a3b75'
 
     # Author of this module
     Author               = 'chenxizhang'
@@ -21,7 +21,7 @@
     Copyright            = '(c) code365.xyz. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description          = 'test module'
+    Description          = 'network toolkit, a lot of power tools that help you to manage, debug and optimize your network'
 
     # Minimum version of the PowerShell engine required by this module, change to 7.x if you just support PowerShell Core.
     PowerShellVersion    = '5.1'
@@ -60,10 +60,10 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport    = @()
+    FunctionsToExport    = @("Get-FiddlerLogsOverview")
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport      = @()
+    CmdletsToExport      = @("Get-FiddlerLogsOverview")
 
     # Variables to export from this module
     VariablesToExport    = '*'
@@ -89,16 +89,16 @@
             Tags         = @("code365", "community", "china", "chenxizhang")
 
             # A URL to the license for this module.
-            LicenseUri   = 'https://github.com/code365opensource/yourmodulename/blob/master/LICENSE'
+            LicenseUri   = 'https://github.com/code365opensource/networktoolkit/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri   = 'https://github.com/code365opensource/yourmodulename/'
+            ProjectUri   = 'https://github.com/code365opensource/networktoolkit/'
 
             # A URL to an icon representing this module.
             # IconUri = ''
 
             # ReleaseNotes of this module
-            ReleaseNotes = "https://github.com/code365opensource/yourmodulename/blob/master/CHANGELOG.md"
+            ReleaseNotes = "https://github.com/code365opensource/networktoolkit/blob/master/CHANGELOG.md"
             # Prerelease string of this module
             # Prerelease = ''
 
@@ -113,7 +113,7 @@
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI          = 'https://github.com/code365opensource/yourmodulename/'
+    HelpInfoURI          = 'https://github.com/code365opensource/networktoolkit/'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
