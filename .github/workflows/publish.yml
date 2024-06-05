@@ -9,16 +9,14 @@ on:
 
 jobs:
   publishmodule:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: publish to powershell gallery
         shell: pwsh
         env:
-          nugetkey: ${{secrets.NUGETKEY}}
-          test: helloworld
+          nugetkey: ${{secrets.NUGETAPIKEY}}
         run: |
           Install-Module -Name PowerShellGet -Force -AllowClobber -Scope CurrentUser
-          Write-Host $env:test
           Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
           Publish-PSResource -ApiKey $env:nugetkey -Path networktoolkit.psd1 -Repository PSGallery
