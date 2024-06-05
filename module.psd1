@@ -3,7 +3,7 @@
     RootModule           = '.\module.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.1'
+    ModuleVersion        = '0.0.0.1'
 
     # Supported PSEditions, change to Core if you just support PowerShell Core.
     CompatiblePSEditions = @("Desktop", "Core")
@@ -100,7 +100,7 @@
             # ReleaseNotes of this module
             ReleaseNotes = "https://github.com/code365opensource/networktoolkit/blob/master/CHANGELOG.md"
             # Prerelease string of this module
-            Prerelease   = 'preview'
+            # Prerelease   = 'preview'
 
             # Flag to indicate whether the module requires explicit user acceptance for install/update/save
             # RequireLicenseAcceptance = $false
