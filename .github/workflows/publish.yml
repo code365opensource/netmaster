@@ -1,0 +1,23 @@
+name: publish to powershell gallery
+on:
+  push:
+    branches: [master]
+    paths:
+      - "**.psd1"
+
+  workflow_dispatch:
+
+jobs:
+  publishmodule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: change the module name
+        shell: pwsh
+        run: Rename-Item -Path .\module.psd1 -NewName yourmodulename.psd1
+      - name: Publish PowerShell Module
+        uses: natescherer/publish-powershell-action@v1
+        with:
+          token: ${{ secrets.NUGETKEY }}
+          target: gallery
+          path: module.psd1
