@@ -18,10 +18,4 @@ jobs:
           key: ${{ secrets.NUGETKEY }}
         run: |
           Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
-          Write-Host $env:key
-      - name: Publish PowerShell Module
-        uses: natescherer/publish-powershell-action@v1.1.1
-        with:
-          token: ${{ secrets.NUGETKEY }}
-          path: ./networktoolkit.psd1
-          target: gallery
+          Publish-PSResource -ApiKey $env:key -Path networktoolkit.psd1 -Repository PSGallery
