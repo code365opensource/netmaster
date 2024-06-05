@@ -15,8 +15,10 @@ jobs:
       - name: publish to powershell gallery
         shell: pwsh
         env:
-          key: ${{secrets.NUGETKEY}}
+          nugetkey: ${{secrets.NUGETKEY}}
+          test: helloworld
         run: |
           Install-Module -Name PowerShellGet -Force -AllowClobber -Scope CurrentUser
+          Write-Host $env:test
           Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
-          Publish-PSResource -ApiKey $env:key -Path networktoolkit.psd1 -Repository PSGallery
+          Publish-PSResource -ApiKey $env:nugetkey -Path networktoolkit.psd1 -Repository PSGallery
