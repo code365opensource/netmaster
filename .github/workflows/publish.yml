@@ -14,7 +14,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: change the module name
         shell: pwsh
-        run: Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
+        env:
+          key: ${{ secrets.NUGETKEY }}
+        run: |
+          Rename-Item -Path .\module.psd1 -NewName networktoolkit.psd1
+          Write-Host $env:key
       - name: Publish PowerShell Module
         uses: chenxizhang/publish-powershell-module-action@v35
         with:
