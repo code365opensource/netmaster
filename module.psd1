@@ -3,7 +3,7 @@
     RootModule           = '.\module.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.0.1'
+    ModuleVersion        = '0.0.1'
 
     # Supported PSEditions, change to Core if you just support PowerShell Core.
     CompatiblePSEditions = @("Desktop", "Core")
@@ -89,18 +89,18 @@
             Tags         = @("code365", "community", "china", "chenxizhang")
 
             # A URL to the license for this module.
-            LicenseUri   = 'https://github.com/code365opensource/networktoolkit/blob/master/LICENSE'
+            LicenseUri   = 'https://github.com/code365opensource/netmaster/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri   = 'https://github.com/code365opensource/networktoolkit/'
+            ProjectUri   = 'https://github.com/code365opensource/netmaster/'
 
             # A URL to an icon representing this module.
             # IconUri = ''
 
             # ReleaseNotes of this module
-            ReleaseNotes = "https://github.com/code365opensource/networktoolkit/blob/master/CHANGELOG.md"
+            ReleaseNotes = "https://github.com/code365opensource/netmaster/blob/master/CHANGELOG.md"
             # Prerelease string of this module
-            # Prerelease   = 'preview'
+            Prerelease   = 'preview'
 
             # Flag to indicate whether the module requires explicit user acceptance for install/update/save
             # RequireLicenseAcceptance = $false
@@ -113,7 +113,7 @@
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI          = 'https://github.com/code365opensource/networktoolkit/'
+    HelpInfoURI          = 'https://github.com/code365opensource/netmaster/'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
