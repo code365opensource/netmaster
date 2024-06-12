@@ -16,9 +16,11 @@ jobs:
         with:
           certificate: '${{ secrets.CERTIFICATE }}'
           password: '${{ secrets.CERTIFICATE_PASSWORD }}'
+          folder: .
           recursive: true
           files: |
             *.ps1
+            *.psm1
       - name: publish to powershell gallery
         shell: pwsh
         env:
