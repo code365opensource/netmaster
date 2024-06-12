@@ -1,8 +1,4 @@
 # The readme about netmaster
-
-> [!NOTE]
-> Replace `netmaster` with the name of the module, and delete this note. change the GUID in the psd1 file as well.
-
 ## Description
 
 
@@ -13,6 +9,9 @@
 
 ```powershell
 Install-Module -Name netmaster -Scope CurrentUser
+
+# or if you want to install the pre-release version
+Install-Module -Name netmaster -Scope CurrentUser -AllowPrerelease
 ```
 
 ## Update the module
