@@ -9,9 +9,16 @@ on:
 
 jobs:
   publishmodule:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: dlemstra/code-sign-action@v1
+        with:
+          certificate: '${{ secrets.CERTIFICATE }}'
+          password: '${{ secrets.CERTIFICATE_PASSWORD }}'
+          recursive: true
+          files: |
+            *.ps1
       - name: publish to powershell gallery
         shell: pwsh
         env:

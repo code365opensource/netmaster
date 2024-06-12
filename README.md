@@ -6,7 +6,7 @@
 ## Description
 
 
-[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/modulename?label=modulename)](https://www.powershellgallery.com/packages/netmaster) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/modulename)](https://www.powershellgallery.com/packages/netmaster) [![](https://img.shields.io/badge/change-logs-blue)](CHANGELOG.md) 
+[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/netmaster?label=netmaster)](https://www.powershellgallery.com/packages/netmaster) [![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/netmaster)](https://www.powershellgallery.com/packages/netmaster) [![](https://img.shields.io/badge/change-logs-blue)](CHANGELOG.md) 
 
 
 ## Install the module
