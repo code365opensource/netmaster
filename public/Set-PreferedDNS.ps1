@@ -1,19 +1,23 @@
 function Set-PreferedDNS {
     [CmdletBinding()]
-    param ()
+    param (
+        [string[]]$DNSServers_ipv4 = ("1.1.1.1", "1.0.0.1"),
+        [string[]]$DNSServers_ipv6 = ("2606:4700:4700::1111", "2606:4700:4700::1001"),
+        [string]$Dohtemplate = "https://cloudflare-dns.com/dns-query"
+    )
 
-    $DNSServers = ("1.1.1.1", "1.0.0.1", "2606:4700:4700::1111", "2606:4700:4700::1001");
-    $Dohtemplate = "https://cloudflare-dns.com/dns-query"
+
+    Clear-DnsClientCache
 
     Get-NetAdapter | Where-Object { $_.Status -eq "Up" } | ForEach-Object { 
-        Set-DnsClientServerAddress -InterfaceAlias $_.interfacealias -Addresses $DNSServers;
+        Set-DnsClientServerAddress -InterfaceAlias $_.interfacealias -Addresses ($DNSServers_ipv4 + $DNSServers_ipv6);
         $interfaceGUID = $_.InterfaceGuid;
 
-        ("1.1.1.1", "1.0.0.1") | ForEach-Object {
+        $DNSServers_ipv4 | ForEach-Object {
             Set-InterfaceSpecificParameters -InterfaceGuid $interfaceGUID -DNSServer $_ -DohFlags 5 -Dohtemplate $Dohtemplate;
         }
 
-        ("2606:4700:4700::1111", "2606:4700:4700::1001") | ForEach-Object {
+        $DNSServers_ipv6 | ForEach-Object {
             Set-InterfaceSpecificParameters -InterfaceGuid $interfaceGUID -DNSServer $_ -DohFlags 5 -Dohtemplate $Dohtemplate -ipv6;
         }
 
