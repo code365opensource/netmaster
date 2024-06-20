@@ -27,6 +27,7 @@ jobs:
           nugetkey: ${{secrets.NUGETKEY}}
         run: |
           Rename-Item -Path .\module.psd1 -NewName netmaster.psd1
+          Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
           $data = Import-PowerShellDataFile .\netmaster.psd1
           $data.RequiredModules | Foreach-Object {Install-Module -Name $_.ModuleName -RequiredVersion $_.RequiredVersion }
           Publish-PSResource -ApiKey $env:nugetkey -Path netmaster.psd1 -Repository PSGallery
