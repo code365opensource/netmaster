@@ -1,4 +1,4 @@
-function Set-PreferedDNS {
+function Set-PreferredDNS {
     [CmdletBinding()]
     param (
         [string[]]$DNSServers_ipv4 = ("1.1.1.1", "1.0.0.1"),

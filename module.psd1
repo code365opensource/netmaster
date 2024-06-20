@@ -3,7 +3,7 @@
     RootModule           = '.\module.psm1'
 
     # Version number of this module.
-    ModuleVersion        = '0.0.2'
+    ModuleVersion        = '0.0.3'
 
     # Supported PSEditions, change to Core if you just support PowerShell Core.
     CompatiblePSEditions = @("Desktop", "Core")
@@ -43,6 +43,10 @@
 
     # Modules that must be imported into the global environment prior to importing this module
     # RequiredModules      = @(@{ ModuleName = 'MicrosoftTeams'; ModuleVersion = '2.0.0' }, @{ModuleName = 'AzureAD'; ModuleVersion = '2.0.2.130' })
+    RequiredModules      = @(@{
+            ModuleName      = "powershellextension"
+            RequiredVersion = "0.0.3"
+        })
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
@@ -60,10 +64,10 @@
     # NestedModules = @()
 
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-    FunctionsToExport    = @("Get-FiddlerLogsOverview")
+    FunctionsToExport    = @("Get-FiddlerLogsOverview", "Get-EgressInfo", "Set-PreferredDNS", "Test-WebSocketLatency")
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-    CmdletsToExport      = @("Get-FiddlerLogsOverview")
+    CmdletsToExport      = @("Get-FiddlerLogsOverview", "Get-EgressInfo", "Set-PreferredDNS", "Test-WebSocketLatency")
 
     # Variables to export from this module
     VariablesToExport    = '*'

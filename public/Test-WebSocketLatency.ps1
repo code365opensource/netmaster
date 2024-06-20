@@ -6,6 +6,6 @@ function Test-WebSocketLatency {
     $uri = New-Object System.Uri($uri)
     $ws.ConnectAsync($uri, [System.Threading.CancellationToken]::None).Wait()
     $sw.Stop()
-    $ws.CloseAsync().Wait()
+    $ws.CloseAsync([System.Net.WebSockets.WebSocketCloseStatus]::NormalClosure, "Close", [System.Threading.CancellationToken]::None).Wait()
     $sw.ElapsedMilliseconds
 }
